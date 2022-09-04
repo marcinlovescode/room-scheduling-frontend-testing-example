@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: #fff;
+    height: 100%;
+}
+
+
+.sidebar__menu__item {
+    display: flex;
+    align-items: center;
+    place-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #555555;
+}
+
+.active {
+    font-weight: bold;
+}
