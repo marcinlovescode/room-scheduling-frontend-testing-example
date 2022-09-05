@@ -31,9 +31,9 @@ describe('rooms', () => {
     await user.click(screen.getByRole('button', { name: /new room/i }))
     const nameInputField = screen.getByLabelText(/name/i)
     const numberOfSeatsInputField = screen.getByLabelText(/Number of seats/i)
-    const hasProjectorCheckbox = screen.getByRole('checkbox', { name: /Has projector/i })
-    const hasSoundSystemCheckbox = screen.getByRole('checkbox', { name: /Has sound system/i })
-    const hasAirConditionerCheckbox = screen.getByRole('checkbox', { name: /Has air conditioner/i })
+    const hasProjectorCheckbox = screen.getByRole('checkbox', { name: /Has projector/i, checked: false })
+    const hasSoundSystemCheckbox = screen.getByRole('checkbox', { name: /Has sound system/i, checked: false })
+    const hasAirConditionerCheckbox = screen.getByRole('checkbox', { name: /Has air conditioner/i, checked: false })
     const submitButton = screen.getByRole('button', { name: /Submit/i })
     var expectedName = `Room_${Math.floor(Math.random() * 999)}`
     var expectedCapacity = Math.floor(Math.random() * 16)
@@ -42,9 +42,6 @@ describe('rooms', () => {
     var expectedHasAirConditionerCheckbox = false
     await user.clear(nameInputField)
     await user.clear(numberOfSeatsInputField)
-    expect((hasProjectorCheckbox as HTMLInputElement).checked).to.be.false
-    expect((hasSoundSystemCheckbox as HTMLInputElement).checked).to.be.false
-    expect((hasAirConditionerCheckbox as HTMLInputElement).checked).to.be.false
     //Act
     await user.type(nameInputField, expectedName);
     await user.type(numberOfSeatsInputField, expectedCapacity.toString());
