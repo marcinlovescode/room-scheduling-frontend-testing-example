@@ -9,6 +9,8 @@ export interface NewRoomProps {
 const NewRoom = ({ onNewRoomAdded }: NewRoomProps) => {
 
     const onSubmitNewRoomClicked = async (room: Room): Promise<void> => {
+        // STEP 6 - modify api url
+        //var response = await fetch('http://localhost:5176/api/Rooms', {
         var response = await fetch('http://localhost:5175/api/Rooms', {
             method: 'POST',
             headers: {
